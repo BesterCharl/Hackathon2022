@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_finder/services/database.dart';
 
 class ParkingTest extends StatefulWidget {
   @override
@@ -45,8 +46,8 @@ class _ParkingTestState extends State<ParkingTest> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    print(coordinates);
-                    print(state);
+                    dynamic result = await DatabaseService("0")
+                        .updateParkingData(coordinates, state);
                   }),
             ],
           ),
