@@ -5,7 +5,14 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyCXl-6LktBYE2snQC-Psb8PKbAFliOIuow", // Your apiKey
+      appId: "1:1032919392243:android:690dfd0d30b92693bb3c86", // Your appId
+      messagingSenderId: "1032919392243", // Your messagingSenderId
+      projectId: "parking-finder-6add4", // Your projectId
+    ),
+  );
   runApp(const MyApp());
 }
 
