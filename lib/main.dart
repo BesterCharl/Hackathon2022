@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parking_finder/landingPage.dart';
 import './home.dart';
 import './parkingTest.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,11 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          brightness: Brightness.dark,
         ),
         //home: const MyHomePage(title: 'Smart Parking Locator'),
-        home: ParkingTest());
+        // home: ParkingTest());
+        home: landingPage(),
+        debugShowCheckedModeBanner: false,);
   }
 }
