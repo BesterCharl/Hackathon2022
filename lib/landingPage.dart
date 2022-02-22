@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './statePage.dart';
 import './mapUtils.dart';
+import './mapDisplay.dart';
 
 class landingPage extends StatefulWidget {
   @override
@@ -49,7 +50,10 @@ class FindParkingButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: () {
         debugPrint('Find my parking');
-        MapUtils.openMap(-3.823216,-38.481700);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const mapDisplay()),
+        );
       },
       child: const Text(
         'Find my parking',
