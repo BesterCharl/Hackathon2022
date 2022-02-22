@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import './statePage.dart';
+import './landingPage.dart';
 
-class landingPage extends StatefulWidget {
+class statePage extends StatefulWidget {
   @override
-  _landingPageState createState() => _landingPageState();
+  _statePageState createState() => _statePageState();
 }
 
-class _landingPageState extends State<landingPage> {
+class _statePageState extends State<statePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _landingPageState extends State<landingPage> {
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(0, 50, 0, 20),
-              child: Text('What do you want to do?',
+              child: Text('What are you doing?',
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.visible,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 38)),
@@ -47,10 +47,11 @@ class FindParkingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        debugPrint('Find my parking');
+        debugPrint('Found my parking spot');
+        Navigator.pop(context);
       },
       child: const Text(
-        'Find my parking',
+        'Found my parking spot',
         style: TextStyle(
           color: Color.fromRGBO(0, 0, 0, 1),
           fontSize: 25,
@@ -72,14 +73,11 @@ class ChangeState extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        debugPrint('Change Parking state');
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => statePage()),
-        );
+        debugPrint('Leaving my parking spot');
+        Navigator.pop(context);
       },
       child: const Text(
-        'Change Parking state',
+        'Leaving my parking spot',
         style: TextStyle(
           color: Color.fromRGBO(0, 0, 0, 1),
           fontSize: 25,
